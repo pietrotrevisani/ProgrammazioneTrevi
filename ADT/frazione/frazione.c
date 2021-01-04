@@ -1,23 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "frazione.h"
-
-//Costruttore
-Frazione frazione(int n, int d)
-{
-    if (d != 0)
-    {
-        int mcd = MCD(n, d);
-        Frazione f;
-        f.num = n / mcd;
-        f.den = d / mcd;
-        return f;
-    }
-    else
-    {
-        printf("Frazione non valida. (Denominatore nullo)\n");
-        exit(1);
-    }
-}
 
 //Utility: funzioni utili al file attuale da non mettere nel file .h
 int MCD(int a, int b)
@@ -36,6 +19,24 @@ int MCD(int a, int b)
         }
     }
     return a;
+}
+
+//Costruttore
+Frazione frazione(int n, int d)
+{
+    if (d != 0)
+    {
+        int mcd = MCD(n, d);
+        Frazione f;
+        f.num = n / mcd;
+        f.den = d / mcd;
+        return f;
+    }
+    else
+    {
+        printf("Frazione non valida. (Denominatore nullo)\n");
+        exit(1);
+    }
 }
 
 //Getter: restituiscono valori dell'oggetto Frazione
