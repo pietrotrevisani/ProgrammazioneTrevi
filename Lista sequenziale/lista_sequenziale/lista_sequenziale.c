@@ -25,7 +25,7 @@ void insTesta(Lista *pl, int numero)
     if (piena(*pl))
     {
         // se la lista e' piena non posso inserire elementi
-        printf(" Errore : lista piena \ n ");
+        printf("Errore: lista piena \n");
         exit(-1);
     }
     // faccio spazio per il nuovo numero spostando gli altri a destra
@@ -43,7 +43,7 @@ void insOrd(Lista *pl, int numero)
     if (piena(*pl))
     {
         // se la lista e' piena non posso inserire elementi
-        printf(" Errore : lista piena \ n ");
+        printf("Errore: lista piena \n");
         exit(-1);
     }
     // sposto a destra tutti gli elementi della lista
