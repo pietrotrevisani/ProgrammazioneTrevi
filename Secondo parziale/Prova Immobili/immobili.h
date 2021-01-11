@@ -15,5 +15,6 @@ typedef nodo_t *lista_t;
 
 void init(lista_t *pl);
 void insTesta(lista_t *pl, dato_t d);
-void insOrd(lista_t *pl, dato_t d);
 lista_t *ricerca(lista_t *pl, dato_t d);
+void insOrd(lista_t *pl, dato_t d);
+void stampaLista(lista_t l);

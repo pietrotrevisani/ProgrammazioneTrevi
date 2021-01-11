@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "immobili.h"
 
 int main(void)
 {
     dato_t immobile;
     lista_t l;
-    FILE *fp = fopen("immobili.dat", "r");
+    FILE *fp;
 
-    if (!fp)
+    if ((fp = fopen("immobili copy.dat", "r+b")) == NULL)
     {
         puts("Errore di apertura del file.");
         exit(1);
@@ -15,11 +17,14 @@ int main(void)
 
     init(&l);
 
-    while (fp)
+    while (fread(&immobile, sizeof(dato_t), 1, fp))
     {
-        fscanf(fp, "%s %d %f", immobile.indirizzo, immobile.vani, immobile.distanza_centro);
         insOrd(&l, immobile);
     }
 
-    return 0;
+    stampaLista(l);
+
+    fclose(fp);
+
+        return 0;
 }
