@@ -18,3 +18,5 @@ void insTesta(lista_t *pl, dato_t d);
 lista_t *ricerca(lista_t *pl, dato_t d);
 void insOrdinato(lista_t *pl, dato_t d);
 void stampa(lista_t l);
+lista_t ricercaVani(lista_t l, int a);
+void ordinaVani(lista_t l, FILE *fp);

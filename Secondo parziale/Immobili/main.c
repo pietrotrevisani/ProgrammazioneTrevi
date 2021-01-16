@@ -34,6 +34,8 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-
+    ordinaVani(ricercaVani(l, a), fp);
+    fclose(fp);
+    
     return 0;
 }
