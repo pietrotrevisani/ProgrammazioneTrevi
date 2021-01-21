@@ -86,7 +86,7 @@ void stampaVani(lista_t l, FILE *fp)
 {
     while (l)
     {
-        fprintf(f, "%s %d %.3f\n", l->dato.indirizzo, l->dato.vani,
+        fprintf(fp, "%s %d %.3f\n", l->dato.indirizzo, l->dato.vani,
                 l->dato.distanza_centro);
         l = l->next;
     }

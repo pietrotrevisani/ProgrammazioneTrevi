@@ -34,13 +34,13 @@ void aggiornaCredito(lista_t *pl, chiamata_t c)
             switch ((*pl)->dato.piano)
             {
             case 'A':
-                costo = 0.15 + 0.08 * (c.durata % 60);
+                costo = 0.15 + 0.08 * ((c.durata / 60) + 1);
                 break;
             case 'B':
                 costo = (0.12 / 60) * c.durata;
                 break;
             default:
-                printf("Piano cliente non valido: %c", (*pl)->dato.piano);
+                printf("Piano cliente non valido: %c\n", (*pl)->dato.piano);
                 break;
             }
 
@@ -54,7 +54,7 @@ void stampaCredito(lista_t l)
 {
     while (l)
     {
-        printf("%s %f\n", l->dato.numero, l->dato.credito);
+        printf("%s %.2f\n", l->dato.numero, l->dato.credito);
         l = l->next;
     }
 }
